@@ -8,6 +8,10 @@ const game = {
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
+      do {
+        getGuess()
+        prevGuesses.push(guess)
+      } while (guess !== this.secretNum)
   },
   getGuess: function() {
     let guess = ''
@@ -16,10 +20,11 @@ const game = {
         prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}`)
       )
     }
+    return guess
   }
 }
-// game.play()
-// game.getGuess()
+game.play()
+game.getGuess()
 
 
 // while (sku !== 'quit') {
