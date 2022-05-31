@@ -4,17 +4,32 @@ const game = {
   biggestNum: 100,
   smallestNum: 1,
   secretNum: null,
+  prevGuesses: [],
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
+  },
+  getGuess: function() {
+    prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}`)
   }
 }
 
-game.prevGuesses = []
-// game.getGuess = function() {
-//   prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}`)
-//   return 
-// }
+
+
+
+// while (sku !== 'quit') {
+//   sku = prompt('Enter SKU or "quit" to exit: ')
+//   if (sku in catalog) {
+//     let price = catalog[sku]
+//     alert(`The price of ${sku} is ${price}`) 
+//   } else if (sku !== 'quit') {
+//     alert('Invalid SKU - try again')
+//   }
+
+
+
+
+
 
 
 // console.log(game)
