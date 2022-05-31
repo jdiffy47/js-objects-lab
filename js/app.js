@@ -5,11 +5,19 @@ const game = {
   smallestNum: 1,
   secretNum: null,
   prevGuesses: [],
+  render: function() {
+    if (this.prevGuesses === this.secretNum) {
+      alert(`Congrats! You have guessed the number in ${this.prevGuesses.length} guesses.`)
+    } else {
+        alert(`Your guess is too ${this.prevGuesses > this.secretNum ? 'high' : 'low'}`)
+      }
+    },
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
       do {
         getGuess()
+        render()
         prevGuesses.push(guess)
       } while (guess !== this.secretNum)
   },
@@ -23,8 +31,7 @@ const game = {
     return guess
   }
 }
-game.play()
-game.getGuess()
+
 
 
 // while (sku !== 'quit') {
